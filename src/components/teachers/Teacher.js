@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './teacher.css';
-import { Table, Tag, Space, Switch } from 'antd';
+import { Table, Tag, Space} from 'antd';
 import axios from 'axios';
+import Header from '../header/Header';
 
 const Teacher = () => {
 
@@ -41,11 +42,9 @@ const Teacher = () => {
           key: 'action',
           render: status => (
             <Space size="middle">
-                {
-                  status ? <Switch defaultChecked onChange={(checked)=>{
-                    console.log(`Switch to ${checked}`)
-                  }}/> : <Switch unCheckedChildren/> 
-                }
+               <button onClick={()=>{
+                 alert('Work')
+               }}>{ status ? 'Desactivar' : 'Activar'}</button>
             </Space>
           ),
         }
@@ -58,14 +57,17 @@ const Teacher = () => {
     },[])
 
     const getTeacher = async() => {
-        const resultado = await axios.get('https://assistances-back.herokuapp.com/teachers');
+        const resultado = await axios.get('http://localhost:3001/teachers');
         setTeacher(resultado.data);
     }
 
     return(
-        <div className="table-pb">
-            <Table columns={TEACHER_COLUMNS} dataSource={teacher} pagination={false} />
-        </div>
+        <>
+          <Header title="Profesores"/>
+          <div className="table-pb">
+              <Table columns={TEACHER_COLUMNS} dataSource={teacher} />
+          </div>
+        </>
     )   
 }
 
