@@ -1,10 +1,10 @@
 @import '~antd/dist/antd.css';
 
 .logo {
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
-  }
+  height: 32px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 16px;
+}
   
 .site-layout-sub-header-background {
 background: #fff;
@@ -17,4 +17,17 @@ background: #fff;
 .container-main{
     height: 100%;
     background: #fff;
+}
+
+.ant-layout-sider-children,
+.ant-menu-dark.ant-menu-inline, .ant-menu-dark.ant-menu-vertical, .ant-menu-dark.ant-menu-vertical-left, .ant-menu-dark.ant-menu-vertical-right {
+  background: #000000;;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #ff0000;
+}
+
+.ant-layout-sider-zero-width-trigger{
+  background: #000;
 }
