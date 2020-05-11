@@ -22,6 +22,7 @@ const Entries = () => {
                 <tr>
                     <th>ID</th>
                     <th>Dia</th>
+                    <th>Mes</th>
                     <th>Entrada</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
@@ -29,15 +30,16 @@ const Entries = () => {
                 </thead>
                 <tbody>
                    {
-                       entries.map(item=>(
-                        <tr>
+                    entries.map(item=>(
+                        <tr key={item._id}>
                             <td>{item._id}</td>
-                       <td>{item.day}</td>
-                       <td>{item.hour}</td>
-                       <td>{item.teacher.names}</td>
-                       <td>{item.teacher.last_names}</td>
+                            <td>{item.day}</td>
+                            <td>{item.month}</td>
+                            <td>{item.hour}</td>
+                            <td>{item.teacher.names}</td>
+                            <td>{item.teacher.last_names}</td>
                         </tr>
-                       ))
+                     ))
                     }
                 </tbody>
             </table>
