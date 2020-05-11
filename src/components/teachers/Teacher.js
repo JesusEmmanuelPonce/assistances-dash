@@ -3,10 +3,16 @@ import './teacher.css';
 import { Table, Tag, Space} from 'antd';
 import axios from 'axios';
 import Header from '../header/Header';
+import ButtonAdd from '../button/ButtonAdd';
 
 const Teacher = () => {
 
     const TEACHER_COLUMNS = [
+        {
+          title: 'ID',
+          dataIndex: '_id',
+          key: '_id'
+        },
         {
           title: 'Nombre',
           dataIndex: 'names',
@@ -18,20 +24,14 @@ const Teacher = () => {
           key: 'last_names'
         },
         {
-          title: 'Codigo',
-          dataIndex: 'code',
-          key: 'code'
-        },
-        {
           title: 'Status',
           dataIndex: 'status',
           key: 'status',
           render : status => {
-            let color = status ? 'green' : 'volcano';
-            let text = status ? 'Activo' : 'Inactivo';
+            let color = status === 'Matutino' ? 'green' : 'blue';
             return (
               <Tag color={color}>
-                  {text}
+                  {status}
               </Tag>
             );
           }
@@ -64,9 +64,10 @@ const Teacher = () => {
     return(
         <>
           <Header title="Profesores"/>
-          <div className="table-pb">
-              <Table columns={TEACHER_COLUMNS} dataSource={teacher} />
-          </div>
+            <div className="table-pb">
+                <Table columns={TEACHER_COLUMNS} dataSource={teacher} />
+            </div>
+            <ButtonAdd/>
         </>
     )   
 }
