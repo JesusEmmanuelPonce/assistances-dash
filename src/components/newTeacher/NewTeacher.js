@@ -68,8 +68,8 @@ const NewTeacher = ({history}) => {
                             </select>
                         </div>
 
-                        <button type="submit" className="btn-add-teacher light-green accent-4">
-                            <SaveOutlined className="icon-teacher"/>AGREGAR
+                        <button type="submit" className="btn waves-effect light-green accent-4">
+                            <i className="material-icons left">save</i>GUARDAR
                         </button>
                 </form>
 
