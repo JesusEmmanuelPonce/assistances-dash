@@ -1,0 +1,9 @@
+.input-select-status{
+    border: none;
+    border-bottom: 1px solid #858585;
+}
+
+.error-msg{
+    color: #e57373;
+}
+
