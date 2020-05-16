@@ -1,4 +1,9 @@
 .table-pb{
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.btn-action{
+    margin: 10px;
 }
