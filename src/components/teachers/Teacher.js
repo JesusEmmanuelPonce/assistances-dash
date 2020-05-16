@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './teacher.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Tag } from 'antd';
 import Header from '../header/Header';
 import ButtonAdd from '../button/ButtonAdd';
 
@@ -62,9 +63,12 @@ const Teacher = () => {
                         <td>{item._id}</td>
                         <td>{item.names}</td>
                         <td>{item.last_names}</td>
-                        <td>{item.status}</td>
+                        <td>{
+                              item.status === 'Matutino' 
+                              ? <Tag color='green'> {item.status} </Tag> 
+                              : <Tag color='blue'>  {item.status} </Tag>
+                        }</td>
                         <td>
-                       
                           <button className="btn waves-effect yellow btn-action">
                             <i className="material-icons left">edit</i>Editar
                           </button>
@@ -73,6 +77,9 @@ const Teacher = () => {
                           onClick={()=>deleteTeacher(item._id)}
                                 >
                             <i className="material-icons left">delete</i>Eliminar
+                          </button>
+                          <button className="btn waves-effect blue btn-action">
+                            <i className="material-icons left">visibility </i>Ver
                           </button>
                         </td>
                       </tr>
