@@ -18,7 +18,7 @@ const Teacher = () => {
     },[teacher])
 
     const getTeacher = async() => {
-        const resultado = await axios.get('http://localhost:3001/teachers');
+        const resultado = await axios.get('https://assistances.herokuapp.com/teachers');
         setTeacher(resultado.data);
     }
 
@@ -34,7 +34,7 @@ const Teacher = () => {
           cancelButtonText: 'No'
         }).then((result) => {
           if (result.value) {
-            axios.delete(`http://localhost:3001/teachers/${id}`)
+            axios.delete(`https://assistances.herokuapp.com/teachers/${id}`)
               .then(res=>{
                 Swal.fire(
                   'Eliminado',

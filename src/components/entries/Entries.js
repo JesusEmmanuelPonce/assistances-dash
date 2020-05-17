@@ -8,7 +8,7 @@ const Entries = () => {
 
     useEffect(()=>{
         const getEntries = async() =>{
-            const resultado = await axios.get('http://localhost:3001/entries')
+            const resultado = await axios.get('https://assistances.herokuapp.com/entries')
             setEntries(resultado.data);
         }
         getEntries()

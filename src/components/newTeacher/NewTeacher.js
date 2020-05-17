@@ -23,7 +23,7 @@ const NewTeacher = ({history}) => {
 
         setError(false)
 
-             axios.post('http://localhost:3001/teachers', {
+             axios.post('https://assistances.herokuapp.com/teachers', {
                 names,
                 last_names,
                 status
