@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './newTeacher.css';
 import Header from '../header/Header';
 import axios from 'axios';
-import { SaveOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
 import { withRouter } from 'react-router-dom';
 
