@@ -18,14 +18,11 @@ const SeeTeacher = (props) => {
         setEntries(resultado.data);
     }
 
-   
-console.log(entries)
     return ( 
         <>
-            <Header title='Asistencias'/>
-            
+            <Header title='Asistencias'/>          
             {
-                entries.map(item=>(
+            entries.map(item=>(
                     <div>
                         {
                             item.teacher._id === id 

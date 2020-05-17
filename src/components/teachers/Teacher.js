@@ -47,7 +47,6 @@ const Teacher = () => {
     }
 
     const showTeacherAssistances = id =>{
-      console.log('id: ', id)
       history.push(`/profesor/asistencias/${id}`)
     }
 
