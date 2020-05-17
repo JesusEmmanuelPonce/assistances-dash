@@ -3,10 +3,13 @@ import './teacher.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Tag } from 'antd';
+import { useHistory  } from 'react-router-dom';
 import Header from '../header/Header';
 import ButtonAdd from '../button/ButtonAdd';
 
 const Teacher = () => {
+
+    const history = useHistory()
 
     const[teacher, setTeacher] = useState([]);
 
@@ -41,6 +44,11 @@ const Teacher = () => {
               })
           }
         })
+    }
+
+    const showTeacherAssistances = id =>{
+      console.log('id: ', id)
+      history.push(`/profesor/asistencias/${id}`)
     }
 
     return(
@@ -78,7 +86,9 @@ const Teacher = () => {
                                 >
                             <i className="material-icons left">delete</i>Eliminar
                           </button>
-                          <button className="btn waves-effect blue btn-action">
+                          <button className="btn waves-effect blue btn-action"
+                          onClick={()=>showTeacherAssistances(item._id)}
+                          >
                             <i className="material-icons left">visibility </i>Ver
                           </button>
                         </td>

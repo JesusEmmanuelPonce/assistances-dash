@@ -7,3 +7,15 @@
 .btn-action{
     margin: 10px;
 }
+
+.see-assistances{
+    padding: 3px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.date{
+    font-size: 20px;
+    font-weight: 700;
+}
